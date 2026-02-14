@@ -21,14 +21,35 @@
 
   #mouse {
     width: 200px;
+    position: relative;
+    z-index: 1;
   }
 
+  /* Base accessory behavior */
   .accessory {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
     display: none;
+    z-index: 2;
+  }
+
+  /* Individual positioning */
+
+  #dress {
+    width: 200px;
+    top: 0px;
+    left: 0px;
+  }
+
+  #shoes {
+    width: 150px;   /* smaller than mouse */
+    top: 140px;     /* adjust up/down */
+    left: 25px;     /* adjust left/right */
+  }
+
+  #bow {
+    width: 90px;
+    top: -10px;
+    left: 60px;
   }
 
   .item-button {
@@ -47,6 +68,7 @@
     color: #cc0066;
   }
 </style>
+
 </head>
 <body>
 
