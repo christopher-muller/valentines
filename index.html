@@ -91,14 +91,27 @@
 <div id="message"></div>
 
 <script>
+  // Track which items are currently worn
   let worn = { dress: false, shoes: false, bow: false };
 
   function putOn(item) {
-    document.getElementById(item).style.display = 'block';
-    worn[item] = true;
+    const element = document.getElementById(item);
 
+    // Toggle display
+    if (worn[item]) {
+      element.style.display = 'none'; // remove
+      worn[item] = false;
+    } else {
+      element.style.display = 'block'; // put on
+      worn[item] = true;
+    }
+
+    // Check if all are worn
     if (worn.dress && worn.shoes && worn.bow) {
-      document.getElementById('message').innerText = "Thanks for helping Mishka get ready for Valentines! Will you be mine?";
+      document.getElementById('message').innerText =
+        "Thanks for helping Mishka get ready for Valentines! Will you be mine?";
+    } else {
+      document.getElementById('message').innerText = ""; // clear message if not all
     }
   }
 </script>
